@@ -19,7 +19,7 @@ class Command(BaseCommand):
         db.workouts.delete_many({})
 
         # Create unique index on email for users
-        db.users.create_index({'email': 1}, unique=True)
+        db.users.create_index([('email', 1)], unique=True)
 
         # Teams
         teams = [
