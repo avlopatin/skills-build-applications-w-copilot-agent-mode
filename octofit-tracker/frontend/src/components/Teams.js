@@ -23,13 +23,32 @@ const Teams = () => {
   }, [endpoint]);
 
   return (
-    <div>
-      <h2>Teams</h2>
-      <ul>
-        {teams.map((team, idx) => (
-          <li key={idx}>{team.name}</li>
-        ))}
-      </ul>
+    <div className="container mt-4">
+      <div className="card shadow-sm">
+        <div className="card-header bg-info text-white">
+          <h2 className="mb-0">Teams</h2>
+        </div>
+        <div className="card-body">
+          <div className="table-responsive">
+            <table className="table table-striped table-hover">
+              <thead className="table-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Team Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                {teams.map((team, idx) => (
+                  <tr key={idx}>
+                    <th scope="row">{idx + 1}</th>
+                    <td>{team.name}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

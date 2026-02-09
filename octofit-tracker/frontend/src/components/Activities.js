@@ -23,13 +23,36 @@ const Activities = () => {
   }, [endpoint]);
 
   return (
-    <div>
-      <h2>Activities</h2>
-      <ul>
-        {activities.map((activity, idx) => (
-          <li key={idx}>{activity.user} - {activity.activity} ({activity.duration} min)</li>
-        ))}
-      </ul>
+    <div className="container mt-4">
+      <div className="card shadow-sm">
+        <div className="card-header bg-primary text-white">
+          <h2 className="mb-0">Activities</h2>
+        </div>
+        <div className="card-body">
+          <div className="table-responsive">
+            <table className="table table-striped table-hover">
+              <thead className="table-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">User</th>
+                  <th scope="col">Activity</th>
+                  <th scope="col">Duration (min)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {activities.map((activity, idx) => (
+                  <tr key={idx}>
+                    <th scope="row">{idx + 1}</th>
+                    <td>{activity.user}</td>
+                    <td>{activity.activity}</td>
+                    <td>{activity.duration}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
