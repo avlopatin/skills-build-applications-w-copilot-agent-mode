@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+// API endpoint: https://{codespace}-8000.app.github.dev/api/activities/
 const Activities = () => {
   const [activities, setActivities] = useState([]);
   const getApiBaseUrl = () => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+// API endpoint: https://{codespace}-8000.app.github.dev/api/users/
 const Users = () => {
   const [users, setUsers] = useState([]);
   const getApiBaseUrl = () => {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+// API endpoint: https://{codespace}-8000.app.github.dev/api/workouts/
 const Workouts = () => {
   const [workouts, setWorkouts] = useState([]);
   const getApiBaseUrl = () => {
@@ -9,8 +10,7 @@ const Workouts = () => {
       return `https://${codespacePrefix}-8000.app.github.dev`;
     }
     return 'http://localhost:8000';
-  };
-  const endpoint = `${getApiBaseUrl()}/api/workouts/`;
+  };  const endpoint = `${getApiBaseUrl()}/api/workouts/`;
 
   useEffect(() => {
     fetch(endpoint)
